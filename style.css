@@ -13,7 +13,7 @@
 
 html {
   font-size: 7px;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 body {
@@ -62,10 +62,10 @@ body {
   margin-top: 115px;
 }
 
-.sticky .about_features,
-.sticky .skills,
-.sticky .project-section,
-.sticky .contact-me {
+.sticky70.about_features,
+.sticky70.skills,
+.sticky70.project-section,
+.sticky70.contact-me {
   padding-top: 70px;
 }
 

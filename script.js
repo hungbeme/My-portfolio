@@ -38,7 +38,7 @@ modeEl.addEventListener("click", function () {
 
 const observerEl = new IntersectionObserver(
   function (entries) {
-    console.log(entries);
+    // console.log(entries);
     const ent = entries[0];
     if (!ent.isIntersecting) {
       document.body.classList.add("sticky");
@@ -55,5 +55,29 @@ const observerEl = new IntersectionObserver(
 observerEl.observe(heroSectionEl);
 
 ////////////////////////////////////////////////////
-/////////////// SMOOTH SCROLLING //////////////////
+//////////////// SMOOTH SCROLLING /////////////////
 ////////////////////////////////////////////////////
+const linkEl = document.querySelectorAll("a:link");
+linkEl.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const href = link.getAttribute("href");
+    if (href === "#") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+
+    if (href !== "#" && href.startsWith("#")) {
+      const sectionEl = document.querySelector(href);
+      console.log(sectionEl);
+      sectionEl.scrollIntoView({
+        behavior: "smooth",
+      });
+
+      sectionEl.classList.add("sticky70");
+    }
+    bodyEl.classList.remove("show-nav");
+  });
+});
