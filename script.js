@@ -60,9 +60,9 @@ observerEl.observe(heroSectionEl);
 const linkEl = document.querySelectorAll("a:link");
 linkEl.forEach((link) => {
   link.addEventListener("click", function (e) {
-    e.preventDefault();
     const href = link.getAttribute("href");
     if (href === "#") {
+      e.preventDefault();
       window.scrollTo({
         top: 0,
         behavior: "smooth",
@@ -70,8 +70,9 @@ linkEl.forEach((link) => {
     }
 
     if (href !== "#" && href.startsWith("#")) {
+      e.preventDefault();
+
       const sectionEl = document.querySelector(href);
-      console.log(sectionEl);
       sectionEl.scrollIntoView({
         behavior: "smooth",
       });
