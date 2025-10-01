@@ -13,7 +13,7 @@
 
 html {
   font-size: 7px;
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -46,7 +46,6 @@ body {
 /* STICKY NAVIGATION */
 .sticky .header {
   position: fixed;
-  /* display: none; */
   top: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -235,7 +234,6 @@ body.change-mode {
 .section-hidden {
   opacity: 0;
   transform: translateY(8rem);
-  /* transition: all 5s; */
 }
 
 /*********************/
@@ -266,7 +264,7 @@ main {
   font-size: 1.6rem;
   line-height: 1.5;
   letter-spacing: 0.5px;
-  margin-bottom: 2.4rem;
+  margin-bottom: 4.4rem;
 }
 
 .hero-tagline strong {
@@ -284,16 +282,11 @@ main {
   justify-content: center;
 }
 
-.hire-me {
-  padding: 1.2rem 2.4rem;
-  cursor: pointer;
-  background-color: #f59f00;
-  border: none;
+.hire-me:link,
+.hire-me:visited {
+  padding: 1.2rem 3.2rem;
   border-radius: 5px;
-}
-
-.hire-me a:link,
-.hire-me a:visited {
+  background-color: #f59f00;
   font-size: 1.6rem;
   text-transform: capitalize;
   font-family: inherit;
@@ -301,12 +294,9 @@ main {
   color: #1f2326;
 }
 
-.hire-me:hover {
+.hire-me:hover,
+.hire-me:active {
   background-color: #e67700;
-}
-
-.hero-buttons button:hover {
-  cursor: pointer;
 }
 
 .hero-section-img {
@@ -500,7 +490,6 @@ main {
   padding: 0.8rem 1.6rem;
   display: inline-block;
   font-size: 1.6rem;
-  /* border-radius: 5px; */
 }
 
 .project-links a:hover,
@@ -636,6 +625,10 @@ input::placeholder {
 }
 
 @media (min-width: 650px) {
+  html {
+    font-size: 12px;
+  }
+
   .project-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -646,7 +639,7 @@ input::placeholder {
   }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 800px) {
   html {
     font-size: 11px;
   }
@@ -695,10 +688,3 @@ input::placeholder {
     font-size: 15px;
   }
 }
-
-/* Font sizes (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-
-- Spacing system (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-*/
