@@ -49,7 +49,6 @@ modeEl.addEventListener("click", function () {
 
 const observerEl = new IntersectionObserver(
   function (entries) {
-    // console.log(entries);
     const ent = entries[0];
     if (!ent.isIntersecting) {
       document.body.classList.add("sticky");
@@ -128,16 +127,14 @@ sendMessageBtn.addEventListener("click", function (e) {
   const phoneElValue = phoneEl.value;
   const messageElValue = messageEl.value;
 
-  console.log(inputElValue, emalElValue, phoneElValue, messageElValue);
+  // const messageDetails = {
+  //   name: inputElValue,
+  //   email: emalElValue,
+  //   Phone: phoneElValue,
+  //   message: messageElValue,
+  // };
 
   // ("https://api.whatsapp.com/send?phone=2349137746866&text=Hi%20Samuel%20I%20Want%20to%20join%20your%20FREE%20graphic%20Design%20Class%20My%20Name%20Is%20");
-
-  window.location.href = `https://api.whatsapp.com/send?phone=2349137746866&text=${{
-    name: inputElValue,
-    email: emalElValue,
-    Phone: phoneElValue,
-    message: messageElValue,
-  }}`;
-
-  console.log("first");
+  window.location.href = `
+  https://api.whatsapp.com/send?phone=2349137746866&text=Name%20:&20${inputElValue} %20 email:%20 ${emalElValue} %20 phone:%20 ${phoneElValue}%20 and%20 message:%20${messageElValue}%20`;
 });
