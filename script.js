@@ -11,8 +11,12 @@ const sectionAll = document.querySelectorAll([
   ".project-section",
   ".contact-me",
 ]);
-
 const bodyEl = document.body;
+const sendMessageBtn = document.querySelector(".contact-btn");
+const inputEl = document.querySelector("#full-name");
+const emalEL = document.querySelector("#email");
+const phoneEl = document.querySelector("#number");
+const messageEl = document.querySelector("#message");
 
 ////////////////////////////////////////////////////
 //////////// MAKING THE NAVIGATION WORK/////////////
@@ -110,4 +114,30 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 sectionAll.forEach((section) => {
   sectionObserver.observe(section);
   section.classList.add("section-hidden");
+});
+
+////////////////////////////////////////////////////
+///////// SENDING MESSSAGES ////////////
+////////////////////////////////////////////////////
+
+sendMessageBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const inputElValue = inputEl.value;
+  const emalElValue = emalEL.value;
+  const phoneElValue = phoneEl.value;
+  const messageElValue = messageEl.value;
+
+  console.log(inputElValue, emalElValue, phoneElValue, messageElValue);
+
+  // ("https://api.whatsapp.com/send?phone=2349137746866&text=Hi%20Samuel%20I%20Want%20to%20join%20your%20FREE%20graphic%20Design%20Class%20My%20Name%20Is%20");
+
+  window.location.href = `https://api.whatsapp.com/send?phone=2349137746866&text=${{
+    name: inputElValue,
+    email: emalElValue,
+    Phone: phoneElValue,
+    message: messageElValue,
+  }}`;
+
+  console.log("first");
 });
