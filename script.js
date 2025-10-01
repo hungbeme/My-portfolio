@@ -127,14 +127,6 @@ sendMessageBtn.addEventListener("click", function (e) {
   const phoneElValue = phoneEl.value;
   const messageElValue = messageEl.value;
 
-  // const messageDetails = {
-  //   name: inputElValue,
-  //   email: emalElValue,
-  //   Phone: phoneElValue,
-  //   message: messageElValue,
-  // };
-
-  // ("https://api.whatsapp.com/send?phone=2349137746866&text=Hi%20Samuel%20I%20Want%20to%20join%20your%20FREE%20graphic%20Design%20Class%20My%20Name%20Is%20");
   window.location.href = `
   https://api.whatsapp.com/send?phone=2349137746866&text=Name:%20${inputElValue}%20email:%20${emalElValue}%20phone:%20${phoneElValue}%20and%20message:%20${messageElValue}%20`;
 });
