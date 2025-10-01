@@ -230,6 +230,16 @@ body.change-mode {
 
 /*********************/
 
+/*** REVEAL ELEMENTS ON SCROLL ***/
+
+.section-hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+  /* transition: all 5s; */
+}
+
+/*********************/
+
 /*********************************/
 /************ HERO - SECTION  ***********/
 /*******************************/
@@ -245,6 +255,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+  transition: transform 1s, opacity 1s;
 }
 
 .hero-section-text {
@@ -309,6 +320,7 @@ main {
 
 .about_features {
   margin-bottom: 8rem;
+  transition: transform 1s, opacity 1s;
 }
 
 .about_features img {
@@ -341,25 +353,22 @@ main {
   color: #f59f00;
 }
 
-.cv {
-  border: none;
+.downloadCV:link,
+.downloadCV:visited {
   background-color: #f59f00;
   padding: 1.2rem 2.4rem;
   margin-top: 1.6rem;
   border-radius: 5px;
-}
-.cv:hover {
-  cursor: pointer;
-  background-color: #e67700;
-  color: #aeb0b3;
-}
-
-.downloadCV:link,
-.downloadCV:visited {
   text-decoration: none;
+  text-align: center;
   color: #d6d8d9;
 }
 
+.downloadCV:hover,
+.downloadCV:active {
+  background-color: #e67700;
+  color: #aeb0b3;
+}
 .features {
   display: flex;
   align-items: center;
@@ -381,6 +390,7 @@ main {
 /*******************************/
 .skills {
   margin-bottom: 8rem;
+  transition: transform 1s, opacity 1s;
 }
 
 .skills-headline {
@@ -423,6 +433,7 @@ main {
 
 .project-section {
   margin-bottom: 8rem;
+  transition: transform 1s, opacity 1s;
 }
 
 .project-headline {
@@ -509,6 +520,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 2.4rem;
+  transition: transform 1s, opacity 1s;
 }
 
 .contact-headline {
@@ -600,6 +612,7 @@ input::placeholder {
   text-align: center;
   font-size: 1.4rem;
   margin-bottom: 2.4rem;
+  transition: transform 1s, opacity 1s;
 }
 
 @media (min-width: 400px) {
@@ -671,7 +684,7 @@ input::placeholder {
     justify-content: center;
   }
 
-  .cv {
+  .downloadCV {
     width: fit-content;
     margin: 0 auto;
   }

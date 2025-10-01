@@ -5,6 +5,13 @@ const closeBtn = document.querySelector(".close-outline");
 const menuEl = document.querySelector(".menu");
 const modeEl = document.querySelector(".mode");
 const heroSectionEl = document.querySelector(".hero-section");
+const sectionAll = document.querySelectorAll([
+  ".about_features",
+  ".skills",
+  ".project-section",
+  ".contact-me",
+]);
+
 const bodyEl = document.body;
 
 ////////////////////////////////////////////////////
@@ -81,4 +88,26 @@ linkEl.forEach((link) => {
     }
     bodyEl.classList.remove("show-nav");
   });
+});
+
+////////////////////////////////////////////////////
+///////// REVEALING ELEMENTS ON SCROLL ////////////
+////////////////////////////////////////////////////
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.remove("section-hidden");
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.1,
+});
+
+sectionAll.forEach((section) => {
+  sectionObserver.observe(section);
+  section.classList.add("section-hidden");
 });
