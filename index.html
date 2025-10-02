@@ -341,22 +341,34 @@
             <div>
               <label for="full-name">Enter Full Name</label>
               <input type="text" id="full-name" placeholder="John Doe" />
+              <p class="message"></p>
             </div>
 
             <div>
               <label for="email">Enter Email</label>
               <input type="email" id="email" placeholder="123@example.com" />
+              <p class="message"></p>
             </div>
 
             <div>
               <label for="number">Enter Phone number</label>
               <input type="number" id="number" placeholder="123456789" />
+              <p class="message"></p>
             </div>
 
             <div>
               <label for="message">Enter Message</label>
-              <textarea id="message" placeholder="Drop a message"> </textarea
-              ><br /><br />
+              <textarea
+                name="message"
+                id="message"
+                rows="3"
+                cols="30"
+                placeholder="Drop a message"
+              >
+              </textarea>
+              <p class="message"></p>
+
+              <!-- <br /><br /> -->
             </div>
 
             <button class="contact-btn" type="submit">Send Message</button>

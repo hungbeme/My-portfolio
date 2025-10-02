@@ -589,6 +589,12 @@ input {
   border: none;
   border-bottom: 1px solid #f59f00;
 }
+.message {
+  font-size: 1.6rem;
+  color: red;
+  display: none;
+  font-family: inherit;
+}
 
 textarea {
   border: 1px solid #f59f00;

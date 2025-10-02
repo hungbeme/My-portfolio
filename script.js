@@ -13,10 +13,12 @@ const sectionAll = document.querySelectorAll([
 ]);
 const bodyEl = document.body;
 const sendMessageBtn = document.querySelector(".contact-btn");
+const contactForm = document.querySelector(".contact-form");
 const inputEl = document.querySelector("#full-name");
 const emalEL = document.querySelector("#email");
 const phoneEl = document.querySelector("#number");
 const messageEl = document.querySelector("#message");
+// const messagePopupEl = document.querySelectorAll(".message");
 
 ////////////////////////////////////////////////////
 //////////// MAKING THE NAVIGATION WORK/////////////
@@ -119,14 +121,57 @@ sectionAll.forEach((section) => {
 ///////// SENDING MESSSAGES ////////////
 ////////////////////////////////////////////////////
 
-sendMessageBtn.addEventListener("click", function (e) {
-  e.preventDefault();
+const setErrorMsg = function (element, message) {
+  const parentEl = element.parentElement;
+  const msg = parentEl.querySelector(".message");
+  msg.style.display = "block";
+  msg.textContent = message;
+};
 
+const setSuccesMsg = function (element) {
+  const parentEl = element.parentElement;
+  const msg = parentEl.querySelector(".message");
+  msg.style.display = "none";
+};
+
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
   const inputElValue = inputEl.value;
   const emalElValue = emalEL.value;
   const phoneElValue = phoneEl.value;
   const messageElValue = messageEl.value;
 
-  window.location.href = `
-  https://api.whatsapp.com/send?phone=2349137746866&text=Name:%20${inputElValue}%20email:%20${emalElValue}%20phone:%20${phoneElValue}%20and%20message:%20${messageElValue}%20`;
+  if (inputElValue === "") {
+    setErrorMsg(inputEl, "Please enter name");
+  } else {
+    setSuccesMsg(inputEl);
+  }
+  if (emalElValue === "") {
+    setErrorMsg(emalEL, "Please enter a valid email");
+  } else {
+    setSuccesMsg(emalEL);
+  }
+
+  if (phoneElValue === "") {
+    setErrorMsg(phoneEl, "Please enter your contact number");
+  } else {
+    setSuccesMsg(phoneEl);
+  }
+  if (messageElValue === "") {
+    console.log("sss");
+    setErrorMsg(messageEl, "Please enter your message");
+  } else {
+    setSuccesMsg(messageEl);
+    console.log("ccc");
+  }
+
+  if (
+    inputElValue !== "" &&
+    emalElValue !== "" &&
+    phoneElValue !== "" &&
+    messageElValue !== ""
+  ) {
+    window.location.href = `
+    https://api.whatsapp.com/send?phone=2349137746866&text=Name:%20${inputElValue}%20email:%20${emalElValue}%20phone:%20${phoneElValue}%20and%20message:%20${messageElValue}%20`;
+  }
 });
