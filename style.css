@@ -737,7 +737,7 @@ input::placeholder {
   }
 }
 
-@media (min-width: 650px) {
+@media (min-width: 800px) {
   .project-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -746,9 +746,7 @@ input::placeholder {
   .contact-div {
     grid-template-columns: repeat(2, 1fr);
   }
-}
 
-@media (min-width: 800px) {
   html {
     font-size: 11px;
   }
