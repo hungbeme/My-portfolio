@@ -61,8 +61,8 @@ const observerEl = new IntersectionObserver(
   {
     root: null,
     threshold: 0,
-    rootMargin: "-70px",
-  }
+    rootMargin: "-60px",
+  },
 );
 observerEl.observe(heroSectionEl);
 
