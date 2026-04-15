@@ -211,7 +211,7 @@ body.change-mode {
 .change-mode .list a:hover,
 .change-mode .list a:active {
   color: var(--accent-color);
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid var(--accent-color);
 }
 
 .change-mode .list a.contact:active,
