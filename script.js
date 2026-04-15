@@ -18,7 +18,7 @@ const inputEl = document.querySelector("#full-name");
 const emalEL = document.querySelector("#email");
 const phoneEl = document.querySelector("#number");
 const messageEl = document.querySelector("#message");
-// const messagePopupEl = document.querySelectorAll(".message");
+const yearEl = document.querySelector(".year");
 
 ////////////////////////////////////////////////////
 //////////// MAKING THE NAVIGATION WORK/////////////
@@ -175,3 +175,8 @@ contactForm.addEventListener("submit", function (e) {
     https://api.whatsapp.com/send?phone=2349137746866&text=Name:%20${inputElValue}%20email:%20${emalElValue}%20phone:%20${phoneElValue}%20and%20message:%20${messageElValue}%20`;
   }
 });
+
+////////////////////////////////////////////////////
+///////// AUTOMATICALLY SETTING THE YEAR ///////////
+////////////////////////////////////////////////////
+yearEl.textContent = new Date().getFullYear();
