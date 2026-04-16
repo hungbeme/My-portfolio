@@ -41,8 +41,31 @@ menuEl.addEventListener("click", function () {
 ///////// MAKING THE LIGHT/DARK MODE WORK///////////
 ////////////////////////////////////////////////////
 
+const currentTheme = localStorage.getItem("theme");
+console.log(currentTheme);
+
+if (currentTheme === "dark") {
+  bodyEl.classList.add("change-mode");
+  console.log(currentTheme, "current theme");
+} else if (window.matchMedia("(prefers-color-scheme : dark)").matches) {
+  document.documentElement.setAttribute("data-theme", "dark");
+}
+
+// if (currentTheme) {
+//   document.documentElement.setAttribute("data-theme", currentTheme);
+//   console.log(currentTheme, "current theme");
+// } else if (window.matchMedia("(prefers-color-scheme : dark)").matches) {
+//   document.documentElement.setAttribute("data-theme", "dark");
+// }
+
 modeEl.addEventListener("click", function () {
   bodyEl.classList.toggle("change-mode");
+
+  let theme = "light";
+  if (bodyEl.classList.contains("change-mode")) {
+    theme = "dark";
+  }
+  localStorage.setItem("theme", theme);
 });
 
 ////////////////////////////////////////////////////
